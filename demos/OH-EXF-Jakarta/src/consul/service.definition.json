@@ -7,12 +7,6 @@
     "public": false,
     "sharable": "singleton",
     "requiredServices": [
-        {
-            "org": "${HZN_ORG_ID}",
-            "url": "${EDGE_OWNER}.${EDGE_DEPLOY}.deploy-data",
-            "version": "${VERSION_deploy_data}",
-            "arch": "${ARCH}"
-        }
     ],
     "userInput": [
 //        { "name": "CONSUL_BIND_INTERFACE", "type": "string", "defaultValue": "eth0" }

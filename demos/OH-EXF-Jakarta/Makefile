@@ -5,7 +5,7 @@ export ARCH ?= $(shell hzn architecture)
 
 # Note: this must be in sorted order based on dependencies
 SUBPROJECTS = deploy-data redis consul mqtt-broker core-metadata device-mqtt \
-				asc-mqtt device-onvif-camera core-command edgex-ui
+				device-onvif-camera asc-mqtt core-command edgex-ui
 
 PATTERNS = edgex-jakarta
 

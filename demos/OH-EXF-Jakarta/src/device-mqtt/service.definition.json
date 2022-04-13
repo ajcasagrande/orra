@@ -24,12 +24,6 @@
             "url": "${EDGE_OWNER}.${EDGE_DEPLOY}.consul",
             "version": "${VERSION_consul}",
             "arch": "${ARCH}"
-        },
-        {
-            "org": "${HZN_ORG_ID}",
-            "url": "${EDGE_OWNER}.${EDGE_DEPLOY}.redis",
-            "version": "${VERSION_redis}",
-            "arch": "${ARCH}"
         }
     ],
     "userInput": [
