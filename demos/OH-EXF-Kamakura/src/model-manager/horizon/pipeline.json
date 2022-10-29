@@ -1,0 +1,47 @@
+{
+	"type": "GStreamer",
+	"template": ["{auto_source} ! application/x-rtp,media=video ! decodebin",
+				" ! gvadetect model={models[worker-safety-mobilenet][1.0.0][network]} name=detection",
+				" ! gvametaconvert name=metaconvert ! gvametapublish name=destination",
+				" ! appsink name=appsink"],
+	"description": "Worker Safety Gear Detection with worker-safety-mobilenet",
+	"parameters": {
+		"type": "object",
+		"properties": {
+			"detection-properties": {
+				"element": {
+					"name": "detection",
+					"format": "element-properties"
+				}
+			},
+			"detection-device": {
+				"element": {
+					"name": "detection",
+					"property": "device"
+				},
+				"type": "string"
+			},
+			"inference-interval": {
+				"element":
+					[ {"name":"detection",
+						"property":"inference-interval"}
+					],
+				"type": "integer"
+			},
+			"detection-model-instance-id": {
+				"element": {
+					"name": "detection",
+					"property": "model-instance-id"
+				},
+				"type": "string"
+			},
+			"detection-threshold": {
+				"element": {
+					"name": "detection",
+					"property": "threshold"
+				},
+				"type": "number"
+			}
+		}
+	}
+}

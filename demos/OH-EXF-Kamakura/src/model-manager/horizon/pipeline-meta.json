@@ -1,0 +1,22 @@
+{
+    "objectID": "safety-gear",
+    "objectType": "${EDGE_OWNER}.${EDGE_DEPLOY}.pipeline",
+    "destinationOrgID": "${HZN_ORG_ID}",
+    "destinationPolicy": {
+        "properties": [],
+        "constraints": [
+            "owner == ${EDGE_OWNER}",
+            "deploy == ${EDGE_DEPLOY}"
+        ],
+        "services": [
+            {
+                "orgID": "${HZN_ORG_ID}",
+                "arch": "${ARCH}",
+                "serviceName": "${EDGE_OWNER}.${EDGE_DEPLOY}.model-manager",
+                "version": "0.0.1"
+            }
+        ]
+    },
+    "version": "1.0.0",
+    "description": "Safety Gear Detector Sample Pipeline"
+}

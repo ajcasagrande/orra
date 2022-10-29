@@ -1,0 +1,22 @@
+{
+    "objectID": "worker-safety-mobilenet",
+    "objectType": "${EDGE_OWNER}.${EDGE_DEPLOY}.model",
+    "destinationOrgID": "${HZN_ORG_ID}",
+    "destinationPolicy": {
+        "properties": [],
+        "constraints": [
+            "owner == ${EDGE_OWNER}",
+            "deploy == ${EDGE_DEPLOY}"
+        ],
+        "services": [
+            {
+                "orgID": "${HZN_ORG_ID}",
+                "arch": "${ARCH}",
+                "serviceName": "${EDGE_OWNER}.${EDGE_DEPLOY}.model-manager",
+                "version": "0.0.1"
+            }
+        ]
+    },
+    "version": "1.0.0",
+    "description": "worker-safety-mobilenet model"
+}

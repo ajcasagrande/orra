@@ -6,7 +6,7 @@ include make/base.mk
 
 # Note: These must be in sorted order based on their dependencies
 # in order for everything to build properly on first build
-SUBPROJECTS = deploy-data model-data redis consul mqtt-broker core-metadata device-mqtt \
+SUBPROJECTS = deploy-data model-data model-manager redis consul mqtt-broker core-metadata device-mqtt \
 			  device-onvif-camera asc-mqtt core-command edgex-ui edge-video-analytics \
 			  app-camera-management
 

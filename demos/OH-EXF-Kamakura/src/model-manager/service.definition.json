@@ -1,0 +1,36 @@
+// Copyright (C) 2022 Intel Corporation
+// SPDX-License-Identifier: Apache-2.0
+{
+    "org": "${HZN_ORG_ID}",
+    "label": "${SERVICE_URL}-${ARCH}",
+    "url": "${SERVICE_URL}",
+    "version": "${SERVICE_VERSION}",
+    "arch": "${ARCH}",
+    "public": false,
+    "sharable": "multiple",
+    "requiredServices": [
+    ],
+    "userInput": [
+        { "name": "SLEEP_INTERVAL", "type": "int", "defaultValue": "5" },
+        { "name": "DEBUG", "type": "string", "defaultValue": "1" },
+        { "name": "MODEL_DIR", "type": "string", "defaultValue": "/models" },
+        { "name": "PIPELINE_DIR", "type": "string", "defaultValue": "/pipelines" },
+        { "name": "MODEL_OBJECT_TYPE", "type": "string", "defaultValue": "${EDGE_OWNER}.${EDGE_DEPLOY}.model" },
+        { "name": "PIPELINE_OBJECT_TYPE", "type": "string", "defaultValue": "${EDGE_OWNER}.${EDGE_DEPLOY}.pipeline" },
+        { "name": "DOWNLOAD_DIR", "type": "string", "defaultValue": "/tmp" }
+    ],
+    "deployment": {
+        "services": {
+            "${SERVICE_URL}": {
+                "image": "${DOCKER_FULL_IMAGE_NAME}",
+                "tmpfs": {
+                    "/tmp": ""
+                },
+                "binds": [
+                    "${APP_BIND_HORIZON_DIR}/edge-video-analytics/models:/models:rw",
+                    "${APP_BIND_HORIZON_DIR}/edge-video-analytics/pipelines:/pipelines:rw"
+                ]
+            }
+        }
+    }
+}

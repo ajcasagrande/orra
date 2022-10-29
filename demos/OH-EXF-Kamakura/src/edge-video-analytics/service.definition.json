@@ -20,6 +20,12 @@
             "url": "${EDGE_OWNER}.${EDGE_DEPLOY}.model-data",
             "version": "${VERSION_model_data}",
             "arch": "${ARCH}"
+        },
+        {
+            "org": "${HZN_ORG_ID}",
+            "url": "${EDGE_OWNER}.${EDGE_DEPLOY}.model-manager",
+            "version": "${VERSION_model_manager}",
+            "arch": "${ARCH}"
         }
     ],
     "userInput": [
